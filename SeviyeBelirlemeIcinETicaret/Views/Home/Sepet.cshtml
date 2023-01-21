@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SeviyeBelirlemeIcinETicaret.Models.siniflar.Urunler> 
+{
+    ViewBag.Title = "Sepet";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <title>Sepetim</title>
+</head>
+<body>
+    <h2>Sepetinizdeki Ürünler </h2>
+    <div class="">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <div>
+                    <h2 style="color:darkblue;">
+                        @Html.DisplayFor(modelItem => item.UrunAdi)
+                        <!---->
+                    </h2>
+                    <p class="">
+                        @Html.DisplayFor(modelItem => item.Fiyat) TL
+                        <!---->
+                    </p>
+                    <div class="">
+                        <input type="submit" name="submit" class="btn btn-info btn-md" value="Satın Al">
+                    </div>
+                </div>
+            </tr>
+        }
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SeviyeBelirlemeIcinETicaret.Models.siniflar.Urunler>
+@{
+    ViewBag.Title = "KategoriyeGoreUrunler";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <title>Kategoriye Gore Urunler</title>
+</head>
+<body>
+
+    <h2> @Session["KategoriAdi"] Kategorisine Göre Ürünler </h2>
+    <div class="">
+        @using (Html.BeginForm("KategoriyeGoreUrunler", "Home", FormMethod.Post))
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <div>
+                        <ul>
+                            <li>
+                                <h2 style="color:darkblue;">
+                                    @Html.DisplayFor(modelItem => item.UrunAdi)
+                                </h2>
+                                <p class="">
+                                    @Html.DisplayFor(modelItem => item.Fiyat) TL
+                                </p>
+                                <p class="">
+                                  Id :  @Html.DisplayFor(modelItem => item.ID) 
+                                </p>
+
+                                <div>
+                                    <input type="hidden" name="UrunId" value=" @Html.DisplayFor(modelItem => item.ID)">
+                                    <input type="hidden" name="KullaniciId" value="@Session["KullaniciId"]">
+                                    <button type="submit" class="btn btn-info btn-md" formmethod="post">Sepete Ekle</button>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                </tr>
+            }
+        }
+    </div>
+</body>
+</html>

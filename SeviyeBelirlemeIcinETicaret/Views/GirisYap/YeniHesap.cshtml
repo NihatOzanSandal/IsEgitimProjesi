@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Giriş Yap";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div id="NewAccount">
+    <h3 class="text-center text-Black pt-5">Hesap Oluştur</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <div class="mail-form-agile">
+                        <form id="NewAccount-form" class="form">
+                            <div class="form-group">
+                                <label for="username" class="text-info">Kullanıcı Adı:</label><br>
+                                <input type="text" id="KullaniciAdi" name="KullaniciAdi" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Sifre:</label><br>
+                                <input type="text" name="Sifre" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-info btn-md">Hesap Oluştur</button>
+                            </div>                       
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

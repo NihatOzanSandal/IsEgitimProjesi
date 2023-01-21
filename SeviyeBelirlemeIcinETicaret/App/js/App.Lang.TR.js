@@ -1,0 +1,3 @@
+﻿var langData = {
+    "jsHello": "Merhaba",
+}

@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<SeviyeBelirlemeIcinETicaret.Models.siniflar.Kategori>
+@{
+    ViewBag.Title = "Home";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <title>HomePage</title>
+</head>
+<body>
+    <br>
+    <hr />
+
+    <h4 style="color:purple;">Hoşgeldiniz :  @Session["KullaniciAdi"]</h4>
+    <hr />
+    <br>
+    <h2>Ürünlerimizi İncelemek İçin Kategori Seçin </h2>
+
+    <div class="list-group">
+        <a href="" class="list-group-item list-group-item-action active">
+            Kategoriler
+        </a>@foreach (var item in Model)
+        {
+            <a href="/Home/KategoriyeGoreUrunler/@Html.DisplayFor(modelItem => item.ID)" class="list-group-item list-group-item-action">@Html.DisplayFor(modelItem => item.KategoriAdi)</a>
+        }
+    </div>
+</body>
+</html>
